@@ -23,7 +23,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Check Android tasks
-        run: ./gradlew :app:tasks | grep assemble
+        run: ./gradlew :app:tasks
 
       - name: Build with Gradle
         run: ./gradlew assembleDebug 
