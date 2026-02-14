@@ -1,13 +1,16 @@
 package im.manus.atlas.data.remote
 
+import okhttp3.ResponseBody
 import retrofit2.http.GET
+import retrofit2.http.Streaming
 
 interface AtlasApi {
-    @GET("data/dados_mapa.json")
+    @GET("dados_mapa.json")
     suspend fun getPartnersData(): PartnerDataResponse
 
-    @GET("data/optimization_data.geojson")
-    suspend fun getOptimizationGeoJson(): String // GeoJSON como String para parsing manual ou via Maps Utils
+    @GET("optimization_data.geojson")
+    @Streaming
+    suspend fun getOptimizationGeoJson(): ResponseBody
 }
 
 data class PartnerDataResponse(
