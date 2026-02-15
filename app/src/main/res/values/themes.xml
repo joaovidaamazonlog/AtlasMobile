@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resource>
+    <style name="Theme.Atlas" parent="Theme.Material3.DayNight.NoActionBar">
+    <!-- Tema base, pode customizar depois -->
+    </style>
+</resource>
