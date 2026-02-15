@@ -28,25 +28,13 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideAtlasDatabase(
+    fun provideDatabase(
         @ApplicationContext context: Context
     ): AtlasDatabase {
         return Room.databaseBuilder(
             context,
             AtlasDatabase::class.java,
-            "atlas_database"
+            "atlas_.db"
         ).build()
     }
-
-    @Provides
-    @Singleton
-    fun providePartnerDao(database: AtlasDatabase) = database.partnerDao()
-
-    @Provides
-    @Singleton
-    fun provideDeliveryStationDao(database: AtlasDatabase) = database.deliveryStationDao()
-
-    @Provides
-    @Singleton
-    fun provideAtlasRepository(impl: AtlasRepositoryImpl): AtlasRepository = impl
 }
